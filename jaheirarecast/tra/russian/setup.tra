@@ -1,0 +1,27 @@
+@0    = ~Jaheira Recast: Character Sounds~
+@1    = ~Use new SoD Character Sounds~
+@2    = ~Use BG1+BG2 Character Sounds~
+@3    = ~Jaheira Recast: Dialog Voiceover~
+@4    = ~Jaheira Recast: Give Jaheira her BG2 Portrait~
+@5    = ~You must have Baldur's Gate: Siege of Dragonspear or Enhanced Edition Trilogy installed.~
+
+// SoD Character Sounds
+// From #39798
+@100  = ~Халид, нет! Я не могу потерять тебя!~ [ayjahrds]
+
+// BG1+BG2 Character Sounds
+@200 = ~Пади тварь! И накорми землю!~ [ayjahbc2]
+@201 = ~Природа, возьми жизнь, которую ты даровала!~ [ayjahbc3]
+@202 = ~ Каждый новый день я встречаю с радостью. ~ [ayjahady]
+@203 = ~ Да?~ [ayjahsc4]
+@204 = ~ Я готова.~ [ayjahsc5]
+@205 = ~ Выскажи свое мнение. ~ [ayjahsc6]
+@206 = ~ В знак возмездия!~ [ayjahcrt]
+@207 = ~Арр!~ [ayjahcrm]
+@208 = ~ Оружие не имеет эффекта!~ [ayjahimm]
+@209 = ~ У меня и так слишком много всего в моем рюкзаке. Тебе придется подобрать это с земли.~ [ayjahinv]
+@210 = ~Моя сосредоточенность нарушена. Мое заклинание провалилось!~ [ayjahspf]
+
+// Dialog Voiceover
+@41593 = ~ Они не говорят. Они могут только кричать. Их крылья - обрубки, никогда не знавшие неба. Их языки знают вкус своих детенышей-сородичей. Их глаза... никогда еще мне не доводилось видеть такого отчаяния. Их жизнь - ничто иное, как бесконечная борьба за выживание.~ [bd41593]
+@59445 = ~ Если об этом узнает мой муж, то это будет очень больно. ~ [bd59445]

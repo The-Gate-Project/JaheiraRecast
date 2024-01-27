@@ -36,6 +36,9 @@ END
 AUTO_TRA ~jaheirarecast/tra/%s~
 LANGUAGE ~English~ ~English~ ~jaheirarecast/tra/english/setup.tra~
 
+LANGUAGE ~Russian~ ~Russian~ ~jaheirarecast/tra/russian/setup.tra~
+
+
 BEGIN @1 /* Use new SoD Character Sounds */
 	SUBCOMPONENT @0  /* Jaheira Recast: Character Sounds */
 	REQUIRE_PREDICATE GAME_IS ~bgee eet~ @5 /* You must have Baldur's Gate: Siege of Dragonspear installed. */
@@ -103,6 +106,7 @@ COPY_EXISTING ~jaheir7%eet_var%.cre~ ~override~
 	SAY REACT_TO_DIE_SPECIFIC 		@100 // ~Khalid, no! Please, I cannot lose you!~
 BUT_ONLY
 
+
 EXTEND_TOP ~bdjaheir.bcs~ ~jaheirarecast/baf/ayjaheir_sod.baf~
 	PATCH_IF GAME_IS ~eet~ THEN BEGIN
 		TEXT_SPRINT eetoff ~2~
@@ -110,7 +114,7 @@ EXTEND_TOP ~bdjaheir.bcs~ ~jaheirarecast/baf/ayjaheir_sod.baf~
 		TEXT_SPRINT eetoff ~~
 	END
 	EVALUATE_BUFFER
-	USING ~jaheirarecast/tra/english/setup.tra~
+	USING ~jaheirarecast/tra/%LANGUAGE%/setup.tra~
 
 COPY ~jaheirarecast/wav/ayjahrds.wav~ ~override~
 
@@ -172,7 +176,7 @@ EXTEND_TOP ~bdjaheir.bcs~ ~jaheirarecast/baf/ayjaheir_bg1bg2.baf~
 		TEXT_SPRINT eetoff ~~
 	END
 	EVALUATE_BUFFER
-	USING ~jaheirarecast/tra/english/setup.tra~
+	USING ~jaheirarecast/tra/%LANGUAGE%/setup.tra~
 
 COPY ~jaheirarecast/wav/ayjahady.wav~ ~override~
 	~jaheirarecast/wav/ayjahbc2.wav~ ~override~
@@ -194,8 +198,9 @@ ACTION_FOR_EACH stridx IN 36850 39006 39108 39277 39340 39398 39739 39781 39798 
 	ACTION_IF !(FILE_EXISTS_IN_GAME ~bd%stridx%.wav~) THEN BEGIN
 		COPY ~jaheirarecast/wav/bd%stridx%.wav~ ~override~
 	END
-	ACTION_GET_STRREF (%eet_offset% + %stridx%) dialogstring
-	STRING_SET_EVALUATE (%eet_offset% + %stridx%) ~%dialogstring%~ [bd%stridx%]
+	OUTER_SET strref = eet_offset + stridx
+	ACTION_GET_STRREF ~%strref%~ dialogstring // (%eet_offset% + %stridx%)
+	STRING_SET_EVALUATE ~%strref%~ ~%dialogstring%~ [bd%stridx%] // (%eet_offset% + %stridx%)
 END
 
 /* 41593 is voiced, but the VO does not match the text.
@@ -205,7 +210,8 @@ STRING_SET_EVALUATE (%eet_offset% + 41593) @41593
 ACTION_IF !(FILE_EXISTS_IN_GAME ~bd59445.wav~) THEN BEGIN
 	COPY ~jaheirarecast/wav/bd59445.wav~ ~override~
 END
-STRING_SET_EVALUATE (%eet_offset% + 59445) @59445
+OUTER_SET strref = eet_offset + 59445
+STRING_SET_EVALUATE ~%strref%~ @59445 // (%eet_offset% + 59445)
 
 
 BEGIN @4 /* Jaheira Recast: Give Jaheira her BG2 Portrait */
