@@ -1,0 +1,224 @@
+/*
+ * "Jaheira Recast" for Siege of Dragonspear
+ * AstroBryGuy
+ *
+*/
+
+/* Backup folder */
+BACKUP ~jaheirarecast/backup~
+
+AUTHOR ~AstroBryGuy~
+
+/* enable all error messages; nothing suppressed. comment this out for release version */
+MODDER
+
+VERSION ~v3.0~
+
+README ~jaheirarecast/readme.html~
+
+ALWAYS
+	INCLUDE ~jaheirarecast/lib/project_macros.tpa~   /* adds macros callable by each component */
+
+	/* STATE.IDS patching - thanks, Cam, if you read it */
+	/* adds custom IsValidForPartyDialogue state */
+	APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~ UNLESS ~CD_STATE_NOTVALID~
+
+	/* EET dialog offset for BGEE/SOD dialogs */
+	ACTION_IF GAME_IS ~eet~ THEN BEGIN
+		OUTER_SET eet_offset = 200000
+		OUTER_SPRINT "eet_var" "_"
+	END ELSE BEGIN
+		OUTER_SET eet_offset = 0
+		OUTER_SPRINT "eet_var" ""
+	END
+END
+
+AUTO_TRA ~jaheirarecast/tra/%s~
+LANGUAGE ~English~ ~English~ ~jaheirarecast/tra/english/setup.tra~
+
+BEGIN @1 /* Use new SoD Character Sounds */
+	SUBCOMPONENT @0  /* Jaheira Recast: Character Sounds */
+	REQUIRE_PREDICATE GAME_IS ~bgee eet~ @5 /* You must have Baldur's Gate: Siege of Dragonspear installed. */
+	REQUIRE_PREDICATE GAME_INCLUDES ~sod~ @5 /* You must have Baldur's Gate: Siege of Dragonspear installed. */
+
+ACTION_FOR_EACH stridx IN 67915 67916 67917 67918 67919 67920 67921 67922 67923 67924 67925 67926 67927 67928 67929 67930 67931 67932 67933 67934 67935 67936 67937 67938 67939 67940 67941 67942 67943 67944 67945 67946 67947 67948 67949 67950 67951 67952 67953 67954 67955 67956 67957 67958 67959 67960 BEGIN
+	ACTION_IF !(FILE_EXISTS_IN_GAME ~bd%stridx%.wav~) THEN BEGIN
+		COPY ~jaheirarecast/wav/bd%stridx%.wav~ ~override~
+	END
+END
+
+COPY_EXISTING ~jaheir7%eet_var%.cre~ ~override~
+	LAUNCH_PATCH_MACRO ~source_cre_sound_cleanup~
+	WRITE_LONG BATTLE_CRY1 			(%eet_offset% + 67915) // Nature guides my hand!
+	WRITE_LONG BATTLE_CRY2 			(%eet_offset% + 67916) // For balance!
+	WRITE_LONG BATTLE_CRY3 			(%eet_offset% + 67917) // The worms shall feast on thee!
+	WRITE_LONG BATTLE_CRY4 			(%eet_offset% + 67918) // At them!
+	WRITE_LONG BATTLE_CRY5 			(%eet_offset% + 67919) // The end comes to you!
+	WRITE_LONG LEADER 				(%eet_offset% + 67920) // I am surprised and pleased by this decision. I shall lead us well.
+	WRITE_LONG TIRED 				(%eet_offset% + 67921) // Everything in nature sleeps. We should as well.
+	WRITE_LONG BORED 				(%eet_offset% + 67922) // We have much to do, and waste time standing here.
+	WRITE_LONG HURT 				(%eet_offset% + 67923) // My life force ebbs... I need healing.
+	WRITE_LONG SELECT_COMMON1 		(%eet_offset% + 67924) // Hm?
+	WRITE_LONG SELECT_COMMON2 		(%eet_offset% + 67925) // What is the task?
+	WRITE_LONG SELECT_COMMON3 		(%eet_offset% + 67926) // Yes?
+	WRITE_LONG SELECT_COMMON4 		(%eet_offset% + 67927) // Am I needed?
+	WRITE_LONG SELECT_COMMON5 		(%eet_offset% + 67928) // I'm here.
+	WRITE_LONG SELECT_COMMON6 		(%eet_offset% + 67929) // Now what?
+	WRITE_LONG SELECT_ACTION1 		(%eet_offset% + 67930) // If it will help.
+//	WRITE_LONG SELECT_ACTION1 		(%eet_offset% + 67931) // I see.
+//	WRITE_LONG SELECT_ACTION1 		(%eet_offset% + 67932) // Yes.
+//	WRITE_LONG SELECT_ACTION2 		(%eet_offset% + 67933) // It's done.
+	WRITE_LONG SELECT_ACTION2 		(%eet_offset% + 67934) // I will.
+	WRITE_LONG SELECT_ACTION3 		(%eet_offset% + 67935) // At once.
+//	WRITE_LONG SELECT_ACTION3 		(%eet_offset% + 67936) // Aye.
+	WRITE_LONG DAMAGE 				(%eet_offset% + 67937) // Ugh!
+	WRITE_LONG DYING 				(%eet_offset% + 67938) // My circle closes.
+	WRITE_LONG AREA_FOREST 			(%eet_offset% + 67939) // Outdoors, I feel as if I could one day find peace.
+	WRITE_LONG AREA_CITY 			(%eet_offset% + 67940) // These buildings are nature's gravestones. I WRITE_LONG we tear them all down.
+	WRITE_LONG AREA_DUNGEON 		(%eet_offset% + 67941) // The strangest and wildest creatures live beneath the earth. Tread softly through their domain.
+	WRITE_LONG AREA_DAY 			(%eet_offset% + 67942) // Dawn breaks, and the sun wakens all life.
+	WRITE_LONG AREA_NIGHT 			(%eet_offset% + 67943) // In night's stillness, prey crawls into their burrows to sleep and predators set out to hunt.
+	WRITE_LONG SELECT_ACTION4 		(%eet_offset% + 67944) // This would be a good place for a henge!
+	WRITE_LONG SELECT_ACTION5 		(%eet_offset% + 67945) // I rule my life like a bird in flight.
+	WRITE_LONG SELECT_ACTION6 		(%eet_offset% + 67946) // Sometimes, it is hard to stay truly neutral when the people around me are such idiots.
+	WRITE_LONG SELECT_ACTION7 		(%eet_offset% + 67947) // Nature never betrays the heart that loves her, but it kicks the stuffing out of everyone else.
+	WRITE_LONG SELECT_RARE1 		(%eet_offset% + 67944) // Same as SELECT_ACTION4
+	WRITE_LONG SELECT_RARE2 		(%eet_offset% + 67947) // Same as SELECT_ACTION7
+	WRITE_LONG CRITICAL_HIT 		(%eet_offset% + 67948) // Suffer nature's wrath!
+	WRITE_LONG CRITICAL_MISS 		(%eet_offset% + 67949) // For every hit, a miss.
+	WRITE_LONG TARGET_IMMUNE 		(%eet_offset% + 67950) // I cannot hurt this enemy. I must try something else.
+	WRITE_LONG INVENTORY_FULL 		(%eet_offset% + 67951) // I'm not here to carry your bags. I dropped it.
+	WRITE_LONG PICKED_POCKET 		(%eet_offset% + 67952) // This is mine now.
+	WRITE_LONG HIDDEN_IN_SHADOWS 	(%eet_offset% + 67953) // Camouflaged.
+	WRITE_LONG SPELL_DISRUPTED 		(%eet_offset% + 67954) // My magic fails!
+	WRITE_LONG SET_A_TRAP 			(%eet_offset% + 67955) // A snare is laid.
+	WRITE_LONG HAPPY 				(%eet_offset% + 67956) // Our actions please me so far. Keep acting as you have and I shall find little fault.
+	WRITE_LONG UNHAPPY_ANNOYED 		(%eet_offset% + 67957) // Our balance is disrupted. YOU must do better.
+	WRITE_LONG UNHAPPY_SERIOUS 		(%eet_offset% + 67958) // We slide farther and farther from the center. Our group cannot last long if we continue this way.
+	WRITE_LONG UNHAPPY_BREAKING 	(%eet_offset% + 67959) // That is enough! We are clearly at odds and cannot work together. I shall go my own way.
+	WRITE_LONG MORALE 				(%eet_offset% + 67960) // My time is not yet come!
+	/* Note BD67961.wav and BD67962.wav are missing from SoDVO.BIF. */
+//	WRITE_LONG REACT_TO_DIE_GENERAL (%eet_offset% + 67961) // No sorrow for those lost in righteous battles.
+//	WRITE_LONG REACT_TO_DIE_SPECIFIC (%eet_offset% + 67962) // Blast it, Khalid! You die, and I—I swear you'll never hear the end of it!
+	SAY REACT_TO_DIE_SPECIFIC 		@100 // ~Khalid, no! Please, I cannot lose you!~
+BUT_ONLY
+
+EXTEND_TOP ~bdjaheir.bcs~ ~jaheirarecast/baf/ayjaheir_sod.baf~
+	PATCH_IF GAME_IS ~eet~ THEN BEGIN
+		TEXT_SPRINT eetoff ~2~
+	END ELSE BEGIN
+		TEXT_SPRINT eetoff ~~
+	END
+	EVALUATE_BUFFER
+	USING ~jaheirarecast/tra/english/setup.tra~
+
+COPY ~jaheirarecast/wav/ayjahrds.wav~ ~override~
+
+
+BEGIN @2 /* Use BG1+BG2 Character Sounds */
+	SUBCOMPONENT @0  /* Jaheira Recast: Character Sounds */
+	REQUIRE_PREDICATE GAME_IS ~bgee eet~ @5 /* You must have Baldur's Gate: Siege of Dragonspear installed. */
+	REQUIRE_PREDICATE GAME_INCLUDES ~sod~ @5 /* You must have Baldur's Gate: Siege of Dragonspear installed. */
+
+COPY_EXISTING ~jaheir7%eet_var%.cre~ ~override~
+	LAUNCH_PATCH_MACRO ~source_cre_sound_cleanup~
+	WRITE_LONG MORALE				(%eet_offset% + 4008) // [JAHEIRA 2] Better to fight this battle when 'tis winnable!
+	WRITE_LONG HAPPY				(%eet_offset% + 4010) // [JAHEIRA 4] Perhaps this group needs not quite as much help as I thought.
+	WRITE_LONG UNHAPPY_ANNOYED		(%eet_offset% + 4011) // [JAHEIRA 5] I don't like the way this group is turning out. Better leadership might help.
+	WRITE_LONG UNHAPPY_SERIOUS		(%eet_offset% + 4012) // [JAHEIRA 6] Decide you well your next move! I'll not allow this to continue!
+	WRITE_LONG UNHAPPY_BREAKING		(%eet_offset% + 4013) // [JAHEIRA 7] You have shown your true nature, and we are henceforth enemies!
+	WRITE_LONG LEADER				(%eet_offset% + 4014) // [JAHEIRA 8] You couldn't have made a better choice.
+	WRITE_LONG TIRED				(%eet_offset% + 4015) // [JAHEIRA 9] I've just about seen enough waking hours, slave-driver.
+	WRITE_LONG BORED				(%eet_offset% + 4016) // [JAHEIRA 10] Shouldn't we be doing something USEFUL with this time?!
+	WRITE_LONG BATTLE_CRY1			(%eet_offset% + 4009) // [JAHEIRA 3] For the fallen!
+	SAY BATTLE_CRY2 				@200 // ~Fall creature! And feed the earth!~ [ayjahbc2]
+	SAY BATTLE_CRY3 				@201 // ~Nature, take the life she gave!~ [ayjahbc3]
+	WRITE_LONG DAMAGE				(%eet_offset% + 5353) // [JAHEIRA 38]
+	WRITE_LONG DYING				(%eet_offset% + 5354) // [JAHEIRA 39]
+	WRITE_LONG HURT					(%eet_offset% + 4017) // [JAHEIRA 11] I fear I need healing... lest I not survive.
+	WRITE_LONG AREA_FOREST			(%eet_offset% + 4018) // [JAHEIRA 12] Tread lightly. You must show respect in nature's house.
+	WRITE_LONG AREA_CITY			(%eet_offset% + 4019) // [JAHEIRA 13] This city is a blight on the landscape. Better to have let the land grow wild.
+	WRITE_LONG AREA_DUNGEON			(%eet_offset% + 4020) // [JAHEIRA 14] An open wound in Mother Earth. I would plug it, had I the power.
+	SAY AREA_DAY 			@202 // ~I welcome each day we see.~ [ayjahady]
+	WRITE_LONG AREA_NIGHT			(%eet_offset% + 4021) // [JAHEIRA 16] Darkness falls, and nature sleeps. Why do we still tromp about?!
+	WRITE_LONG SELECT_COMMON1		(%eet_offset% + 4022) // [JAHEIRA 17] Nature's servant awaits.
+	WRITE_LONG SELECT_COMMON2		(%eet_offset% + 4023) // [JAHEIRA 18] Yes, oh omnipresent authority figure?
+	WRITE_LONG SELECT_COMMON3		(%eet_offset% + 4024) // [JAHEIRA 19] You've a task?
+	SAY SELECT_COMMON4 				@203 // ~Yes?~ [ayjahsc4]
+	SAY SELECT_COMMON5 				@204 // ~I am ready.~ [ayjahsc5]
+	SAY SELECT_COMMON6 				@205 // ~Speak your mind.~ [ayjahsc6]
+	WRITE_LONG SELECT_ACTION1		(%eet_offset% + 4025) // [JAHEIRA 20] For the group.
+	WRITE_LONG SELECT_ACTION2		(%eet_offset% + 4026) // [JAHEIRA 21] As you direct.
+	WRITE_LONG SELECT_ACTION3		(%eet_offset% + 4027) // [JAHEIRA 22] 'Tis good as done.
+	WRITE_LONG SELECT_ACTION4		(%eet_offset% + 4028) // [JAHEIRA 23] Ah, what now? Need your pantaloons pressed?!
+	WRITE_LONG SELECT_ACTION5		(%eet_offset% + 4029) // [JAHEIRA 24] By your command.
+	WRITE_LONG SELECT_ACTION6		(%eet_offset% + 4030) // [JAHEIRA 25] This would be a good place for a henge!
+	WRITE_LONG SELECT_ACTION7		(%eet_offset% + 4031) // [JAHEIRA 26] If a tree falls in the forest... I'll kill the bastard what done it!
+	WRITE_LONG REACT_TO_DIE_GENERAL		(%eet_offset% + 4043) // No sorrow for those lost in righteous battles.
+	WRITE_LONG REACT_TO_DIE_SPECIFIC	(%eet_offset% + 4044) // Blast it, Khalid! You die, and I—I swear you'll never hear the end of it!
+	WRITE_LONG SELECT_RARE1			(%eet_offset% + 4030) // [JAHEIRA 25] This would be a good place for a henge!
+	WRITE_LONG SELECT_RARE2			(%eet_offset% + 4031) // [JAHEIRA 26] If a tree falls in the forest... I'll kill the bastard what done it!
+	SAY CRITICAL_HIT 				@206 // ~With vengeance!~ [ayjahcrt]
+	SAY CRITICAL_MISS 				@207 // ~Argh!~ [ayjahcrm]
+	SAY TARGET_IMMUNE 				@208 // ~Weapon has no effect!~ [ayjahimm]
+	SAY INVENTORY_FULL 				@209 // ~I have too much in my pack as it is. You'll have to pick that up off the ground.~ [ayjahinv]
+	SAY SPELL_DISRUPTED 			@210 // ~My concentration is undone. My spell has failed!~ [ayjahspf]
+BUT_ONLY
+
+EXTEND_TOP ~bdjaheir.bcs~ ~jaheirarecast/baf/ayjaheir_bg1bg2.baf~
+	PATCH_IF GAME_IS ~eet~ THEN BEGIN
+		TEXT_SPRINT eetoff ~20~
+	END ELSE BEGIN
+		TEXT_SPRINT eetoff ~~
+	END
+	EVALUATE_BUFFER
+	USING ~jaheirarecast/tra/english/setup.tra~
+
+COPY ~jaheirarecast/wav/ayjahady.wav~ ~override~
+	~jaheirarecast/wav/ayjahbc2.wav~ ~override~
+	~jaheirarecast/wav/ayjahbc3.wav~ ~override~
+	~jaheirarecast/wav/ayjahcrm.wav~ ~override~
+	~jaheirarecast/wav/ayjahcrt.wav~ ~override~
+	~jaheirarecast/wav/ayjahimm.wav~ ~override~
+	~jaheirarecast/wav/ayjahinv.wav~ ~override~
+	~jaheirarecast/wav/ayjahsc4.wav~ ~override~
+	~jaheirarecast/wav/ayjahsc5.wav~ ~override~
+	~jaheirarecast/wav/ayjahsc6.wav~ ~override~
+	~jaheirarecast/wav/ayjahspf.wav~ ~override~
+
+BEGIN @3 /* Jaheira Recast: Dialog Voiceover */
+	REQUIRE_PREDICATE GAME_IS ~bgee eet~ @5 /* You must have Baldur's Gate: Siege of Dragonspear installed. */
+	REQUIRE_PREDICATE GAME_INCLUDES ~sod~ @5 /* You must have Baldur's Gate: Siege of Dragonspear installed. */
+
+ACTION_FOR_EACH stridx IN 36850 39006 39108 39277 39340 39398 39739 39781 39798 39799 39800 39801 40122 40197 40327 40953 41517 41554 41577 41666 41704 41706 42314 42319 42323 42337 42344 42375 42434 44233 44300 45995 47209 47215 47240 48069 48071 48203 48232 50790 50794 50806 51140 51922 57073 57088 57093 57102 57120 57959 58092 58706 58917 58919 58994 58996 59000 59061 59063 59065 59139 59141 59144 59146 59203 59205 59254 59256 59258 59290 59292 59294 59328 59340 59371 59392 59397 59399 59436 59438 59441 59447 59455 59457 59472 60153 60170 60621 60630 60631 61100 61427 64016 64018 64020 64045 64921 64974 65486 65654 66302 66309 66313 66323 67339 68347 68353 68368 68372 68390 68402 69242 69243 69244 69245 69246 69247 69250 69251 69252 69253 69644 BEGIN
+	ACTION_IF !(FILE_EXISTS_IN_GAME ~bd%stridx%.wav~) THEN BEGIN
+		COPY ~jaheirarecast/wav/bd%stridx%.wav~ ~override~
+	END
+	ACTION_GET_STRREF (%eet_offset% + %stridx%) dialogstring
+	STRING_SET_EVALUATE (%eet_offset% + %stridx%) ~%dialogstring%~ [bd%stridx%]
+END
+
+/* 41593 is voiced, but the VO does not match the text.
+STRING_SET_EVALUATE (%eet_offset% + 41593) @41593
+*/
+/* 59445 is voiced, but the VO does not match the text. */
+ACTION_IF !(FILE_EXISTS_IN_GAME ~bd59445.wav~) THEN BEGIN
+	COPY ~jaheirarecast/wav/bd59445.wav~ ~override~
+END
+STRING_SET_EVALUATE (%eet_offset% + 59445) @59445
+
+
+BEGIN @4 /* Jaheira Recast: Give Jaheira her BG2 Portrait */
+	REQUIRE_PREDICATE GAME_IS ~bgee eet~ @5 /* You must have Baldur's Gate: Siege of Dragonspear installed. */
+	REQUIRE_PREDICATE GAME_INCLUDES ~sod~ @5 /* You must have Baldur's Gate: Siege of Dragonspear installed. */
+
+ACTION_FOR_EACH jaheira IN jaheir jaheir2 jaheir4 jaheir6 "jaheir7%eet_var%" BEGIN
+	ACTION_IF FILE_EXISTS_IN_GAME "%jaheira%.cre" BEGIN
+		COPY_EXISTING ~%jaheira%.CRE~ ~override~
+      		PATCH_IF (SOURCE_SIZE > 0x2d3) BEGIN // protects against invalid files
+        		WRITE_ASCII 0x34 ~njaheirm~ #8 // small portrait
+        		WRITE_ASCII 0x3c ~njaheirl~ #8 // large portrait
+        	END
+        BUT_ONLY
+    END
+END

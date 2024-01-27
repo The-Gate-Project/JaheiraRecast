@@ -1,0 +1,27 @@
+@0    = ~Jaheira Recast: Character Sounds~
+@1    = ~Use new SoD Character Sounds~
+@2    = ~Use BG1+BG2 Character Sounds~
+@3    = ~Jaheira Recast: Dialog Voiceover~
+@4    = ~Jaheira Recast: Give Jaheira her BG2 Portrait~
+@5    = ~You must have Baldur's Gate: Siege of Dragonspear or Enhanced Edition Trilogy installed.~
+
+// SoD Character Sounds
+// From #39798
+@100  = ~Khalid, no! Please, I cannot lose you!~ [ayjahrds]
+
+// BG1+BG2 Character Sounds
+@200  = ~Fall creature! And feed the earth!~ [ayjahbc2]
+@201  = ~Nature, take the life she gave!~ [ayjahbc3]
+@202  = ~I welcome each day we see.~ [ayjahady]
+@203  = ~Yes?~ [ayjahsc4]
+@204  = ~I am ready.~ [ayjahsc5]
+@205  = ~Speak your mind.~ [ayjahsc6]
+@206  = ~With vengeance!~ [ayjahcrt]
+@207  = ~Argh!~ [ayjahcrm]
+@208  = ~Weapon has no effect!~ [ayjahimm]
+@209  = ~I have too much in my pack as it is. You'll have to pick that up off the ground.~ [ayjahinv]
+@210  = ~My concentration is undone. My spell has failed!~ [ayjahspf]	
+
+// Dialog Voiceover
+@41593 = ~They are beyond speaking. They can only scream. Their wings are stubs, never spread in the sky. Their tongues know the taste of their hatchling-kin. Their eyes... never have I seen such desperation. Their lives are naught but an endless struggle to survive.~ [bd41593]
+@59445 = ~The harm will be in my husband's fist if he finds out about it.~ [bd59445]

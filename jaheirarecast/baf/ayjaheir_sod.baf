@@ -1,0 +1,76 @@
+IF
+	Global("SOD_fromimport","global",1)
+	Global("ay_NewSounds","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetPlayerSound(Myself,-1,INITIAL_MEETING) // No such index
+		SetPlayerSound(Myself,%eetoff%67960,MORALE) // My time is not yet come!
+		SetPlayerSound(Myself,%eetoff%67956,HAPPY) // Our actions please me so far. Keep acting as you have and I shall find little fault.
+		SetPlayerSound(Myself,%eetoff%67957,UNHAPPY_ANNOYED) // Our balance is disrupted. YOU must do better.
+		SetPlayerSound(Myself,%eetoff%67958,UNHAPPY_SERIOUS) // We slide farther and farther from the center. Our group cannot last long if we continue this way.
+		SetPlayerSound(Myself,%eetoff%67959,UNHAPPY_BREAKING_POINT) // That is enough! We are clearly at odds and cannot work together. I shall go my own way.
+		SetPlayerSound(Myself,%eetoff%67920,LEADER) // I am surprised and pleased by this decision. I shall lead us well.
+		SetPlayerSound(Myself,%eetoff%67921,TIRED) // Everything in nature sleeps. We should as well.
+		SetPlayerSound(Myself,%eetoff%67922,BORED) // We have much to do, and waste time standing here.
+		SetPlayerSound(Myself,%eetoff%67915,BATTLE_CRY1) // Nature guides my hand!
+		SetPlayerSound(Myself,%eetoff%67916,BATTLE_CRY2) // For balance!
+		SetPlayerSound(Myself,%eetoff%67917,BATTLE_CRY3) // The worms shall feast on thee!
+		SetPlayerSound(Myself,%eetoff%67918,BATTLE_CRY4) // At them!
+		SetPlayerSound(Myself,%eetoff%67919,BATTLE_CRY5) // The end comes to you!
+		SetPlayerSound(Myself,%eetoff%67985,DAMAGE) // Oww!
+		SetPlayerSound(Myself,%eetoff%67986,DYING) // I have f-fallen...
+		SetPlayerSound(Myself,%eetoff%67923,HURT) // My life force ebbs... I need healing.
+		SetPlayerSound(Myself,%eetoff%67939,AREA_FOREST) // Outdoors, I feel as if I could one day find peace.
+		SetPlayerSound(Myself,%eetoff%67940,AREA_CITY) // These buildings are nature's gravestones. I say we tear them all down.
+		SetPlayerSound(Myself,%eetoff%67981,AREA_DUNGEON) // Y-yes!
+		SetPlayerSound(Myself,%eetoff%67942,AREA_DAY) // Dawn breaks, and the sun wakens all life.
+		SetPlayerSound(Myself,%eetoff%67943,AREA_NIGHT) // In night's stillness, prey crawls into their burrows to sleep and predators set out to hunt.
+		SetPlayerSound(Myself,%eetoff%67924,SELECT_COMMON1) // Hm?
+		SetPlayerSound(Myself,%eetoff%67925,SELECT_COMMON2) // What is the task?
+		SetPlayerSound(Myself,%eetoff%67926,SELECT_COMMON3) // Yes?
+		SetPlayerSound(Myself,%eetoff%67927,SELECT_COMMON4) // Am I needed?
+		SetPlayerSound(Myself,%eetoff%67928,SELECT_COMMON5) // I'm here.
+		SetPlayerSound(Myself,%eetoff%67929,SELECT_COMMON6) // Now what?
+		SetPlayerSound(Myself,%eetoff%67930,SELECT_ACTION1) // If it will help.
+		SetPlayerSound(Myself,%eetoff%67934,SELECT_ACTION2) // I will.
+		SetPlayerSound(Myself,%eetoff%67935,SELECT_ACTION3) // At once.
+		SetPlayerSound(Myself,%eetoff%67944,SELECT_ACTION4) // This would be a good place for a henge!
+		SetPlayerSound(Myself,%eetoff%67945,SELECT_ACTION5) // I rule my life like a bird in flight.
+		SetPlayerSound(Myself,%eetoff%67946,SELECT_ACTION6) // Sometimes, it is hard to stay truly neutral when the people around me are such idiots.
+		SetPlayerSound(Myself,%eetoff%67947,SELECT_ACTION7) // Nature never betrays the heart that loves her, but it kicks the stuffing out of everyone else.
+		SetPlayerSound(Myself,-1,REACT_TO_DIE_GENERAL) // No such index
+		SetPlayerSound(Myself,@100,REACT_TO_DIE_SPECIFIC) // Khalid, no! Please, I cannot lose you!
+		SetPlayerSound(Myself,%eetoff%67944,SELECT_RARE1) // This would be a good place for a henge!
+		SetPlayerSound(Myself,%eetoff%67947,SELECT_RARE2) // Nature never betrays the heart that loves her, but it kicks the stuffing out of everyone else.
+		SetPlayerSound(Myself,%eetoff%67948,CRITICAL_HIT) // Suffer nature's wrath!
+		SetPlayerSound(Myself,%eetoff%67949,CRITICAL_MISS) // For every hit, a miss.
+		SetPlayerSound(Myself,%eetoff%67950,TARGET_IMMUNE) // I cannot hurt this enemy. I must try something else.
+		SetPlayerSound(Myself,%eetoff%67951,INVENTORY_FULL) // I'm not here to carry your bags. I dropped it.
+		SetPlayerSound(Myself,%eetoff%67952,PICKED_POCKET) // This is mine now.
+		SetPlayerSound(Myself,%eetoff%67953,EXISTANCE1) // Camouflaged.
+		SetPlayerSound(Myself,%eetoff%67954,EXISTANCE2) // My magic fails!
+		SetPlayerSound(Myself,%eetoff%67955,EXISTANCE3) // A snare is laid.
+		SetPlayerSound(Myself,-1,INTERACTION1) // No such index
+		SetPlayerSound(Myself,-1,INTERACTION2) // No such index
+		SetPlayerSound(Myself,-1,INTERACTION3) // No such index
+		SetPlayerSound(Myself,-1,INTERACTION4) // No such index
+		SetPlayerSound(Myself,-1,INTERACTION5) // No such index
+		SetPlayerSound(Myself,-1,INSULT1) // No such index
+		SetPlayerSound(Myself,-1,INSULT2) // No such index
+		SetPlayerSound(Myself,-1,INSULT3) // No such index
+		SetPlayerSound(Myself,-1,COMPLIMENT1) // No such index
+		SetPlayerSound(Myself,-1,COMPLIMENT2) // No such index
+		SetPlayerSound(Myself,-1,COMPLIMENT3) // No such index
+		SetPlayerSound(Myself,-1,SPECIAL1) // No such index
+		SetPlayerSound(Myself,-1,SPECIAL2) // No such index
+		SetPlayerSound(Myself,-1,SPECIAL3) // No such index
+		SetPlayerSound(Myself,-1,MISCELLANEOUS) // No such index
+		SetPlayerSound(Myself,-1,RESPONSE_TO_COMPLIMENT2) // No such index
+		SetPlayerSound(Myself,-1,RESPONSE_TO_COMPLIMENT3) // No such index
+		SetPlayerSound(Myself,-1,RESPONSE_TO_INSULT1) // No such index
+		SetPlayerSound(Myself,-1,RESPONSE_TO_INSULT2) // No such index
+		SetPlayerSound(Myself,-1,RESPONSE_TO_INSULT3) // No such index
+		SetPlayerSound(Myself,-1,DIALOG_HOSTILE) // No such index
+		SetPlayerSound(Myself,-1,DIALOG_DEFAULT) // No such index
+		SetGlobal("ay_NewSounds","LOCALS",1)
+END

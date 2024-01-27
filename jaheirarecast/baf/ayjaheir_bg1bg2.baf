@@ -1,0 +1,76 @@
+IF
+	Global("SOD_fromimport","global",1)
+	Global("ay_NewSounds","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetPlayerSound(Myself,-1,INITIAL_MEETING) // No such index
+		SetPlayerSound(Myself,%eetoff%4008,MORALE) // [JAHEIRA 2] Better to fight this battle when 'tis winnable!
+		SetPlayerSound(Myself,%eetoff%4010,HAPPY) // [JAHEIRA 4] Perhaps this group needs not quite as much help as I thought.
+		SetPlayerSound(Myself,%eetoff%4011,UNHAPPY_ANNOYED) // [JAHEIRA 5] I don't like the way this group is turning out. Better leadership might help.
+		SetPlayerSound(Myself,%eetoff%4012,UNHAPPY_SERIOUS) // [JAHEIRA 6] Decide you well your next move! I'll not allow this to continue!
+		SetPlayerSound(Myself,%eetoff%4013,UNHAPPY_BREAKING_POINT) // [JAHEIRA 7] You have shown your true nature, and we are henceforth enemies!
+		SetPlayerSound(Myself,%eetoff%4014,LEADER) // [JAHEIRA 8] You couldn't have made a better choice.
+		SetPlayerSound(Myself,%eetoff%4015,TIRED) // [JAHEIRA 9] I've just about seen enough waking hours, slave-driver.
+		SetPlayerSound(Myself,%eetoff%4016,BORED) // [JAHEIRA 10] Shouldn't we be doing something USEFUL with this time?!
+		SetPlayerSound(Myself,%eetoff%4009,BATTLE_CRY1) // [JAHEIRA 3] For the fallen!
+		SetPlayerSound(Myself,@200,BATTLE_CRY2) // Fall creature! And feed the earth!
+		SetPlayerSound(Myself,@201,BATTLE_CRY3) // Nature, take the life she gave!
+		SetPlayerSound(Myself,-1,BATTLE_CRY4) // No such index
+		SetPlayerSound(Myself,-1,BATTLE_CRY5) // No such index
+		SetPlayerSound(Myself,%eetoff%5353,DAMAGE) // [JAHEIRA 38]
+		SetPlayerSound(Myself,%eetoff%5354,DYING) // [JAHEIRA 39]
+		SetPlayerSound(Myself,%eetoff%4017,HURT) // [JAHEIRA 11] I fear I need healing... lest I not survive.
+		SetPlayerSound(Myself,%eetoff%4018,AREA_FOREST) // [JAHEIRA 12] Tread lightly. You must show respect in nature's house.
+		SetPlayerSound(Myself,%eetoff%4019,AREA_CITY) // [JAHEIRA 13] This city is a blight on the landscape. Better to have let the land grow wild.
+		SetPlayerSound(Myself,%eetoff%4020,AREA_DUNGEON) // [JAHEIRA 14] An open wound in Mother Earth. I would plug it, had I the power.
+		SetPlayerSound(Myself,@202,AREA_DAY) // I welcome each day we see.
+		SetPlayerSound(Myself,%eetoff%4021,AREA_NIGHT) // [JAHEIRA 16] Darkness falls, and nature sleeps. Why do we still tromp about?!
+		SetPlayerSound(Myself,%eetoff%4022,SELECT_COMMON1) // [JAHEIRA 17] Nature's servant awaits.
+		SetPlayerSound(Myself,%eetoff%4023,SELECT_COMMON2) // [JAHEIRA 18] Yes, oh omnipresent authority figure?
+		SetPlayerSound(Myself,%eetoff%4024,SELECT_COMMON3) // [JAHEIRA 19] You've a task?
+		SetPlayerSound(Myself,@203,SELECT_COMMON4) // Yes?
+		SetPlayerSound(Myself,@204,SELECT_COMMON5) // I am ready.
+		SetPlayerSound(Myself,@205,SELECT_COMMON6) // Speak your mind.
+		SetPlayerSound(Myself,%eetoff%4025,SELECT_ACTION1) // [JAHEIRA 20] For the group.
+		SetPlayerSound(Myself,%eetoff%4026,SELECT_ACTION2) // [JAHEIRA 21] As you direct.
+		SetPlayerSound(Myself,%eetoff%4027,SELECT_ACTION3) // [JAHEIRA 22] 'Tis good as done.
+		SetPlayerSound(Myself,%eetoff%4028,SELECT_ACTION4) // [JAHEIRA 23] Ah, what now? Need your pantaloons pressed?!
+		SetPlayerSound(Myself,%eetoff%4029,SELECT_ACTION5) // [JAHEIRA 24] By your command.
+		SetPlayerSound(Myself,%eetoff%4030,SELECT_ACTION6) // [JAHEIRA 25] This would be a good place for a henge!
+		SetPlayerSound(Myself,%eetoff%4031,SELECT_ACTION7) // [JAHEIRA 26] If a tree falls in the forest... I'll kill the bastard what done it!
+		SetPlayerSound(Myself,%eetoff%4043,REACT_TO_DIE_GENERAL) // [JAHEIRA 40] No sorrow for those lost in righteous battles.
+		SetPlayerSound(Myself,%eetoff%4044,REACT_TO_DIE_SPECIFIC) // [JAHEIRA 41] Blast it, Khalid! You die, and I—I swear you'll never hear the end of it!
+		SetPlayerSound(Myself,%eetoff%4030,SELECT_RARE1) // [JAHEIRA 25] This would be a good place for a henge!
+		SetPlayerSound(Myself,%eetoff%4031,SELECT_RARE2) // [JAHEIRA 26] If a tree falls in the forest... I'll kill the bastard what done it!
+		SetPlayerSound(Myself,@206,CRITICAL_HIT) // With vengeance!
+		SetPlayerSound(Myself,@207,CRITICAL_MISS) // Argh!
+		SetPlayerSound(Myself,@208,TARGET_IMMUNE) // Weapon has no effect!
+		SetPlayerSound(Myself,@209,INVENTORY_FULL) // I have too much in my pack as it is. You'll have to pick that up off the ground.
+		SetPlayerSound(Myself,-1,PICKED_POCKET) // No such index
+		SetPlayerSound(Myself,-1,EXISTANCE1) // No such index
+		SetPlayerSound(Myself,@210,EXISTANCE2) // My concentration is undone. My spell has failed!
+		SetPlayerSound(Myself,-1,EXISTANCE3) // No such index
+		SetPlayerSound(Myself,-1,INTERACTION1) // No such index
+		SetPlayerSound(Myself,-1,INTERACTION2) // No such index
+		SetPlayerSound(Myself,-1,INTERACTION3) // No such index
+		SetPlayerSound(Myself,-1,INTERACTION4) // No such index
+		SetPlayerSound(Myself,-1,INTERACTION5) // No such index
+		SetPlayerSound(Myself,-1,INSULT1) // No such index
+		SetPlayerSound(Myself,-1,INSULT2) // No such index
+		SetPlayerSound(Myself,-1,INSULT3) // No such index
+		SetPlayerSound(Myself,-1,COMPLIMENT1) // No such index
+		SetPlayerSound(Myself,-1,COMPLIMENT2) // No such index
+		SetPlayerSound(Myself,-1,COMPLIMENT3) // No such index
+		SetPlayerSound(Myself,-1,SPECIAL1) // No such index
+		SetPlayerSound(Myself,-1,SPECIAL2) // No such index
+		SetPlayerSound(Myself,-1,SPECIAL3) // No such index
+		SetPlayerSound(Myself,-1,MISCELLANEOUS) // No such index
+		SetPlayerSound(Myself,-1,RESPONSE_TO_COMPLIMENT2) // No such index
+		SetPlayerSound(Myself,-1,RESPONSE_TO_COMPLIMENT3) // No such index
+		SetPlayerSound(Myself,-1,RESPONSE_TO_INSULT1) // No such index
+		SetPlayerSound(Myself,-1,RESPONSE_TO_INSULT2) // No such index
+		SetPlayerSound(Myself,-1,RESPONSE_TO_INSULT3) // No such index
+		SetPlayerSound(Myself,-1,DIALOG_HOSTILE) // No such index
+		SetPlayerSound(Myself,-1,DIALOG_DEFAULT) // No such index
+		SetGlobal("ay_NewSounds","LOCALS",1)
+END
