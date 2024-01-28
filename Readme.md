@@ -62,6 +62,10 @@ Jaheira Recast is unofficial Fan Content permitted under the Fan Content Policy.
 
 ## Version History
 
+Version 3.1 - January 28, 2024
+
+- Add russian translation
+
 Version 3.0 - August 18, 2018
 
 - Fixes issues with EET support
