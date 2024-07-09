@@ -38,6 +38,7 @@ LANGUAGE ~English~ ~English~ ~jaheirarecast/tra/english/setup.tra~
 
 LANGUAGE ~Russian~ ~Russian~ ~jaheirarecast/tra/russian/setup.tra~
 
+LANGUAGE ~Simplified Chinese(by Lzw104522773)~ ~schinese~ ~jaheirarecast/tra/schinese/setup.tra~
 
 BEGIN @1 /* Use new SoD Character Sounds */
 	SUBCOMPONENT @0  /* Jaheira Recast: Character Sounds */
